@@ -1,5 +1,11 @@
 var app = angular.module("myApp", []);
 
+app.controller('HeaderController' , function($scope){
+    $scope.app = {};
+    $scope.app.title   = 'Book Store';
+    $scope.app.tagLine = 'Books for All';
+});
+
 app.controller('MyBookListController' , function($scope){
     console.log("xxx");
     

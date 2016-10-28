@@ -1,7 +1,8 @@
 #contentWrapper{
     width: 80%;
-    border: 1px solid #000;
+    border: 10px solid #ccc;
     margin: 0 auto;
+    padding: 5px;
 }
 
 .book-display{
