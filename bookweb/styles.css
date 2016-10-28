@@ -8,3 +8,15 @@
 .book-display{
     margin: 5px;
 }
+
+.listcontainer.ng-enter{
+    -webkit-transition:0.5s linear all;
+    -moz-transition:0.5s linear all;
+    -o-transition: 0.5s linear all;
+    transition:0.5s linear all;
+    opacity:0;
+}
+
+.listcontainer.ng-enter-active{
+    opacity:1;
+}

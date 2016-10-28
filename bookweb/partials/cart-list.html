@@ -1,1 +1,18 @@
 <h2>Cart View</h2>
+<div class="col-md-12 book-display">
+        <div class="media" ng-repeat="book in cart">
+        <div class="media-left media-middle">
+        <a href="#">
+          <img class="media-object" src="{{book.cover}}" alt="...">
+        </a>
+      </div>
+      <div class="media-body">
+        <h2 class="media-heading">{{book.title}}</h2>
+        <h4>{{book.price | currency: "Rs."}}</h4>
+        <h4>{{book.language_main | uppercase}}</h4>
+        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+      </div>
+    </div>
+</div>

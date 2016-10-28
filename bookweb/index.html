@@ -13,6 +13,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
+    <script src="app.js"></script>
     <script src="controllers.js"></script>
   </head>
   <body>
@@ -20,22 +22,21 @@
     <div class="page-header" ng-controller="HeaderController">
         <h1>{{app.title}} <small>{{app.tagLine}}</small></h1>
         <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="#/books">Books List</a></li>
-            <li role="presentation"><a href="#/cart">Cart</a></li>
+            <li role="presentation" ng-class="{active: nav.isActive('/books')}"><a href="#/books">Books List</a></li>
+            <li role="presentation" ng-class="{active: nav.isActive('/cart')}"><a href="#/cart">Cart</a></li>
         </ul>
     </div>
         <div class="container">
             <div class="row">
                <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" class="form-control" placeholder="Search" ng-model="searchStr">
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
                 </form>
             </div>
         </div>
         <div class="row">
-            <div ng-view></div>
+            <div ng-view class="listcontainer"></div>
         </div>
     </div>
     
