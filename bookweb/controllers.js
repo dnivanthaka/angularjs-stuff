@@ -1,9 +1,23 @@
-var app = angular.module("myApp", []);
+var app = angular.module("myApp", ["ngRoute"]);
 
 app.controller('HeaderController' , function($scope){
     $scope.app = {};
     $scope.app.title   = 'Book Store';
     $scope.app.tagLine = 'Books for All';
+});
+
+app.config(function($routeProvider){
+    $routeProvider
+        .when("/books", {
+            templateUrl: "partials/books-list.html",
+            controller: "MyBookListController"
+        })
+        .when("/cart", {
+            templateUrl: "partials/cart-list.html"
+        })
+        .otherwise({
+            redirectTo: "/books"
+        });
 });
 
 app.controller('MyBookListController' , function($scope){

@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="styles.css"></link>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
     <script src="controllers.js"></script>
   </head>
   <body>
     <div id="contentWrapper">
     <div class="page-header" ng-controller="HeaderController">
         <h1>{{app.title}} <small>{{app.tagLine}}</small></h1>
-        <button type="button" class="btn btn-primary">Book List</button>
-        <button type="button" class="btn btn-primary">Cart</button>
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#/books">Books List</a></li>
+            <li role="presentation"><a href="#/cart">Cart</a></li>
+        </ul>
     </div>
         <div class="container">
             <div class="row">
@@ -32,24 +35,8 @@
             </div>
         </div>
         <div class="row">
-        <div class="col-md-12 book-display" ng-controller="MyBookListController">
-        <div class="media" ng-repeat="book in books">
-        <div class="media-left media-middle">
-        <a href="#">
-          <img class="media-object" src="{{book.cover}}" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">{{book.title}}</h4>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-
-Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </div>
-    </div>
-       
-    
-    </div>
-    </div>
+            <div ng-view></div>
+        </div>
     </div>
     
   </body>
